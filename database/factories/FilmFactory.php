@@ -18,7 +18,7 @@ class FilmFactory extends Factory
         $title=$this->faker->sentence(2,true);
         return [
             'title'=>$title,
-            'poster'=>'https://via.placeholder.com/600/5F1138/FFFFFF?text=POSTER.*'
+
         ];
     }
 }

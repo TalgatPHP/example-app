@@ -17,7 +17,7 @@ class CreateFilmsTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->smallInteger('status')->default(0);
-            $table->string('poster')->nullable();
+            $table->string('poster')->default('https://via.placeholder.com/600/5F1138/FFFFFF?text=POSTER.*');
         });
     }
 

@@ -13,6 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/films', [App\Http\Controllers\FilmController::class, 'index'])->name('film.index');
+Route::get('/films/{id}',[App\Http\Controllers\FilmController::class,'show'])->name('film.show');
+Route::get('/films/genre/{genre}', [App\Http\Controllers\FilmController::class, 'allByGenre'])->name('film.genre');
+Route::get('/create', [App\Http\Controllers\FilmController::class,'create'])->name('films.create');
+Route::post('/', [App\Http\Controllers\FilmController::class,'store'])->name('films.store');
